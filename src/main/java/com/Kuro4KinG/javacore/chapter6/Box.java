@@ -1,6 +1,6 @@
 package main.java.com.Kuro4KinG.javacore.chapter6;
 
-//  Теперь метод volume() возвращае объём параллелепипеда
+//  В этой программе применяется метод с параметрами
 
 class Box {
     double width;
@@ -9,6 +9,13 @@ class Box {
 
     // рассчитать и возвратить объём
     double volume() {
-        return width*height*depth;
+        return width * height * depth;
+    }
+
+    // установить размеры параллелепипеда
+    void setDim(double w, double h, double d) {
+        width = w;
+        height = h;
+        depth = d;
     }
 }
