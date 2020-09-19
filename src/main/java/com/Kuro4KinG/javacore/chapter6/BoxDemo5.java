@@ -1,9 +1,28 @@
 package main.java.com.Kuro4KinG.javacore.chapter6;
 
+// В этой программе применяется метод с параметрами
+class Box5 {
+    double width;
+    double height;
+    double depth;
+
+    // рассчитать и возвратить объём
+    double volume() {
+        return width * height * depth;
+    }
+
+    // установить размеры параллелепипеда
+    void setDim(double w, double h, double d) {
+        width = w;
+        height = h;
+        depth = d;
+    }
+}
+
 public class BoxDemo5 {
     public static void main(String[] args) {
-        Box mybox1 = new Box();
-        Box mybox2 = new Box();
+        Box5 mybox1 = new Box5();
+        Box5 mybox2 = new Box5();
         double vol;
 
         // инициализировать каждый экземпляр класса Box

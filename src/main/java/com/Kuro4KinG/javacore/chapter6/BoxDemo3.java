@@ -1,10 +1,22 @@
 package main.java.com.Kuro4KinG.javacore.chapter6;
 
 // В этой программе применяется метод, введенный в класс Box
+
+class Box3{
+    double width;
+    double height;
+    double depth;
+
+    // вывести объём параллелепипеда
+    void volume(){
+        System.out.print("Объём равен ");
+        System.out.println(width*height*depth);
+    }
+}
 public class BoxDemo3 {
     public static void main(String[] args) {
-        Box mybox1 = new Box();
-        Box mybox2 = new Box();
+        Box3 mybox1 = new Box3();
+        Box3 mybox2 = new Box3();
 
         // присвоить значение переменным экземпляра mybox1
         mybox1.width = 10;

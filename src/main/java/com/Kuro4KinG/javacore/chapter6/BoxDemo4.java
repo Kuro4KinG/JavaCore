@@ -1,9 +1,22 @@
 package main.java.com.Kuro4KinG.javacore.chapter6;
 
+// Теперь метод volume() возвращает объём параллелепипеда
+
+class Box4 {
+    double width;
+    double height;
+    double depth;
+
+    // рассчитать и возвратить объём
+    double volume() {
+        return width * height * depth;
+    }
+}
+
 public class BoxDemo4 {
     public static void main(String[] args) {
-        Box mybox1 = new Box();
-        Box mybox2 = new Box();
+        Box4 mybox1 = new Box4();
+        Box4 mybox2 = new Box4();
         double vol;
 
         // присвоить значения переменным экземпляра mybox1
