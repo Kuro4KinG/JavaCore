@@ -1,23 +1,21 @@
 package main.java.com.Kuro4KinG.javacore.chapter8;
 
-// Применение полиморфизма во время выполнения
-class Figure {
+// Применение абстрактных методов и классов
+abstract class Figure2 {
     double dim1;
     double dim2;
 
-    Figure(double a, double b) {
+    Figure2(double a, double b) {
         dim1 = a;
         dim2 = b;
     }
 
-    double area() {
-        System.out.println("Площадь фигуры не определена.");
-        return 0;
-    }
+    // теперь метод area() объявляется абстрактным
+    abstract double area();
 }
 
-class Rectangle extends Figure {
-    Rectangle(double a, double b) {
+class Rectangle2 extends Figure2 {
+    Rectangle2(double a, double b) {
         super(a, b);
     }
 
@@ -28,8 +26,8 @@ class Rectangle extends Figure {
     }
 }
 
-class Triangle extends Figure {
-    Triangle(double a, double b) {
+class Triangle2 extends Figure2 {
+    Triangle2(double a, double b) {
         super(a, b);
     }
 
@@ -40,20 +38,17 @@ class Triangle extends Figure {
     }
 }
 
-class FindAreas {
+class AbstractAreas {
     public static void main(String[] args) {
-        Figure f = new Figure(10, 10);
-        Rectangle r = new Rectangle(9, 5);
-        Triangle t = new Triangle(10, 8);
-        Figure figref;
+        // Figure2 f = new Figure2(10, 10); //теперь недопустимо
+        Rectangle2 r = new Rectangle2(9, 5);
+        Triangle2 t = new Triangle2(10, 8);
+        Figure2 figref; // верно, но объект не создаётся
 
         figref = r;
         System.out.println("Площадь равна " + figref.area());
 
         figref = t;
-        System.out.println("Площадь равна " + figref.area());
-
-        figref = f;
         System.out.println("Площадь равна " + figref.area());
     }
 }
