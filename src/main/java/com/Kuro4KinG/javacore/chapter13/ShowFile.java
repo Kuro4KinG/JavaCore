@@ -33,13 +33,15 @@ public class ShowFile {
             } while (i != -1);
         } catch (IOException e) {
             System.out.println("Ошибка чтения из файла");
-        }
-
-        // закрыть файл
-        try {
-            fin.close();
-        } catch (IOException e) {
-            System.out.println("Ошибка закрытия файла");
+        } finally {
+            // закрыть файл при выходе из блока оператора try
+            try {
+                fin.close();
+            } catch (IOException e) {
+                System.out.println("Ошибка закрытия файла");
+            }
         }
     }
+
 }
+
