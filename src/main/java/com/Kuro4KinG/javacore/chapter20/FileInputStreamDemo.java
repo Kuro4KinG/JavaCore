@@ -6,15 +6,15 @@ public class FileInputStreamDemo {
     public static void main(String[] args) {
         int size;
 
-        try (FileInputStream f = new FileInputStream("FileInputStreamDemo.java")) {
-            System.out.println("Общее количество достуупных байтов: "
+        try (FileInputStream f = new FileInputStream("/Users/user/IdeaProjects/JavaCore/src/main/java/com/Kuro4KinG/javacore/chapter20/FileInputStreamDemo.java")) {
+            System.out.println("Общее количество доступных байтов: "
                     + (size = f.available()));
             int n = size / 40;
             System.out.println("Первые " + n + " байтов, " + "прочитанных из файла по очереди методом read()");
             for (int i = 0; i < n; i++) {
                 System.out.print((char) f.read());
             }
-            System.out.println("/nВсе ещё доступно: " + f.available());
+            System.out.println("\nВсе ещё доступно: " + f.available());
             System.out.println("Чтение следующих " + n + " байтов по очереди методом read(b[])");
             byte b[] = new byte[n];
             if (f.read(b) != n) {
